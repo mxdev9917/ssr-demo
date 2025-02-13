@@ -2,6 +2,7 @@ import { GrFacebookOption } from "react-icons/gr";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaGithub, FaGooglePlusG } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 function App() {
   const [html, setHtml] = useState(0);
@@ -23,11 +24,17 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  
 
   return (
     <>
-
+      <Helmet>
+        <title>EH MIXAI - Web Developer</title>
+        <meta name="description" content="EH MIXAI - Web Developer, Graphic Designer, Photographer. View my CV and skills." />
+        <meta property="og:title" content="EH MIXAI - Web Developer" />
+        <meta property="og:description" content="EH MIXAI - Web Developer, Graphic Designer, Photographer. View my CV and skills." />
+        <meta property="og:image" content="/me.jpg" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
       <div className="flex flex-col items-center w-full h-screen relative bg-gray-900 overflow-x-auto">
         <img
           className="w-full h-[250px] md:h-[300px] lg:h-[400px] object-cover"
@@ -35,7 +42,7 @@ function App() {
           alt="Background"
         />
 
-        <div className="flex flex-col h-auto sm:w-[80%] w-full absolute top-0">
+        <header className="flex flex-col h-auto sm:w-[80%] w-full absolute top-0">
           <nav className="flex text-base sm:text-lg text-white mt-5 font-medium px-4 md:px-8">
             <div className="w-full cursor-pointer">Creative CV</div>
             <div className="flex justify-end gap-3 w-full">
@@ -49,7 +56,7 @@ function App() {
             <img
               className="w-24 md:w-28 lg:w-32 rounded-full mb-4 border-4 border-white shadow-[0_0_10px_rgba(255,255,255,0.8)] animate-glow"
               src="/me.jpg"
-              alt="Profile"
+              alt="Profile Picture of EH MIXAI"
             />
 
             <p className="text-2xl font-bold text-center">EH MIXAI</p>
@@ -76,9 +83,9 @@ function App() {
 
             </div>
           </div>
-        </div>
+        </header>
 
-        <div className="flex flex-col gap-5  lg:flex-row w-[90%] lg:w-[60%] h-fit bg-white mt-24 sm:mt-10 lg:mt-8 shadow-md rounded-sm ">
+        <section className="flex flex-col gap-5  lg:flex-row w-[90%] lg:w-[60%] h-fit bg-white mt-24 sm:mt-10 lg:mt-8 shadow-md rounded-sm ">
           <div className="flex flex-col items-start  w-full h-full p-4">
             <p className="text-center font-semibold text-2xl mb-2">About</p>
             <span>&nbsp; &nbsp; Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</span>
@@ -111,9 +118,9 @@ function App() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
         <p className="text-white text-2xl font-bold my-5">Professional Skills</p>
-        <div className="flex flex-col gap-5  lg:flex-row w-[90%] lg:w-[60%] h-fit bg-white  shadow-md rounded-sm mb-20 sm:mb-28">
+        <section className="flex flex-col gap-5  lg:flex-row w-[90%] lg:w-[60%] h-fit bg-white  shadow-md rounded-sm mb-20 sm:mb-28">
           <div className="flex flex-col gap-3.5 items-start  w-full h-full p-4">
             <div className="flex flex-col gap-2 w-full">
               <div className="flex justify-between text-green-700">
@@ -178,10 +185,10 @@ function App() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
 
-      <div className="flex gap-3 justify-center absolute bottom-8 md:bottom-10 w-full overflow-hidden">
+      <section className="flex gap-3 justify-center absolute bottom-8 md:bottom-10 w-full overflow-hidden">
         <div className="flex justify-center items-center w-10 h-10 md:w-12 md:h-12 bg-gray-600 hover:bg-gray-500 rounded-full cursor-pointer">
           <GrFacebookOption className="text-xl md:text-2xl text-white" />
         </div>
@@ -194,7 +201,7 @@ function App() {
         <div className="flex justify-center items-center w-10 h-10 md:w-12 md:h-12 bg-gray-600 hover:bg-gray-500 rounded-full cursor-pointer">
           <FaGooglePlusG className="text-xl md:text-2xl text-white" />
         </div>
-      </div>
+      </section>
     </>
   );
 }
